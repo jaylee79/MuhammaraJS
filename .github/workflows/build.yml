@@ -133,10 +133,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: xcversion select 11.2.1 --symlink
-        if: ${{ runner.os == 'macOS' }}
-      - run: xcversion install-cli-tools
-        if: ${{ runner.os == 'macOS' }}
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
